@@ -15,6 +15,8 @@ def generate_content(names):
             counter += 1
             files += f"File{counter}={n}\n"
 
+            print(f"{counter} -- {n}")
+
     content = f"[playlist]\nNumberOfEntries={counter}\n" + files
 
     return content
@@ -29,3 +31,4 @@ if __name__ == '__main__':
     names = load_list()
     content = generate_content(names)
     dump_pls(content)
+    input("Fin")
