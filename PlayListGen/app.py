@@ -8,13 +8,11 @@ def generate_content(names):
     ns = names
     counter = 0
     files = ""
-    filetype = "." + input("Please input filetype\n>>>: ")
 
     for n in ns:
         n = n.strip()
         if len(n) > 0:
             counter += 1
-            n += filetype
             files += f"File{counter}={n}\n"
 
     content = f"[playlist]\nNumberOfEntries={counter}\n" + files
