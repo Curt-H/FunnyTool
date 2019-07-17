@@ -3,7 +3,9 @@ import os
 
 def add_to_3_digit(num):
     n = num
-    if n < 100:
+    if n < 10:
+        return '-000' + str(n)
+    elif n < 100:
         return '-00' + str(n)
     else:
         return '-' + str(n)
@@ -24,7 +26,7 @@ if __name__ == '__main__':
             print(new_fname)
 
             old_path = os.path.join(folder, file)
-            new_path = os.path.join(new_folder, new_fname)
+            new_path = os.path.join(new_folder, new_fname).replace(':',':\\')
             print(old_path)
             print(new_path)
             os.rename(old_path, new_path)
